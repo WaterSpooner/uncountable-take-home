@@ -13,7 +13,11 @@
   justify-content: flex-start;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-4);
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light) 0%,
+    var(--color-primary) 100%
+  );
   color: var(--color-white);
   border: none;
   cursor: pointer;
@@ -22,7 +26,11 @@
 }
 
 .header:hover {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
 }
 
 .header:active {

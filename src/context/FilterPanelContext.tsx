@@ -1,6 +1,16 @@
-import { createContext, useContext, useMemo, useState, type ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useMemo,
+  useState,
+  type ReactNode,
+} from 'react';
 import type { Filter } from '../types/filter';
-import type { ExperimentId, ExperimentFields, ExperimentField } from '../types/data';
+import type {
+  ExperimentId,
+  ExperimentFields,
+  ExperimentField,
+} from '../types/data';
 
 interface FilterPanelContextValue {
   fields: ExperimentFields;
@@ -21,12 +31,23 @@ interface FilterPanelProviderProps {
   children: ReactNode;
 }
 
-const FilterPanelContext = createContext<FilterPanelContextValue | undefined>(undefined);
+const FilterPanelContext = createContext<FilterPanelContextValue | undefined>(
+  undefined,
+);
 
-function FilterPanelProvider({ fields, experimentIds, children }: FilterPanelProviderProps) {
-  const fieldNames = useMemo(() => Object.values(fields).flat() as ExperimentField[], [fields]);
-  const [selectedExperiments, setSelectedExperiments] = useState<ExperimentId[]>(experimentIds);
-  const [selectedFields, setSelectedFields] = useState<ExperimentField[]>(fieldNames);
+function FilterPanelProvider({
+  fields,
+  experimentIds,
+  children,
+}: FilterPanelProviderProps) {
+  const fieldNames = useMemo(
+    () => Object.values(fields).flat() as ExperimentField[],
+    [fields],
+  );
+  const [selectedExperiments, setSelectedExperiments] =
+    useState<ExperimentId[]>(experimentIds);
+  const [selectedFields, setSelectedFields] =
+    useState<ExperimentField[]>(fieldNames);
   const [filters, setFilters] = useState<Filter[]>([]);
 
   const resetSelections = () => {

@@ -35,7 +35,7 @@
   --sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
   background: var(--bg);
-  font: 14px/1.5 var(--sans);
+  font: 14px / 1.5 var(--sans);
   color-scheme: light;
 }
 

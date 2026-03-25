@@ -72,7 +72,7 @@
 }
 
 .tooltip::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -4px;
   top: 50%;

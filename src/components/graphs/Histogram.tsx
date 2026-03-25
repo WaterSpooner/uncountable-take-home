@@ -6,18 +6,18 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-} from "recharts";
-import { useMemo, useState } from "react";
-import type { Dataset, InputField } from "../../types/data";
-import { Dropdown } from "../shared/Dropdown";
-import styles from "./Histogram.module.css";
+} from 'recharts';
+import { useMemo, useState } from 'react';
+import type { Dataset, InputField } from '../../types/data';
+import { Dropdown } from '../shared/Dropdown';
+import styles from './Histogram.module.css';
 
 type HistogramBin = { binStart: number; binEnd: number; count: number };
 
 function buildHistogram(
   data: Array<Record<string, unknown>>,
   xKey: string,
-  binCount = 10
+  binCount = 10,
 ): HistogramBin[] {
   const values = data
     .map((d) => Number(d[xKey]))
@@ -45,8 +45,14 @@ function buildHistogram(
   return bins;
 }
 
-export function Histogram({ dataset, xAxisOptions }: { dataset: Dataset; xAxisOptions: InputField[] }) {
-  const [xAxis, setXAxis] = useState<InputField | "">("");
+export function Histogram({
+  dataset,
+  xAxisOptions,
+}: {
+  dataset: Dataset;
+  xAxisOptions: InputField[];
+}) {
+  const [xAxis, setXAxis] = useState<InputField | ''>('');
 
   const flatData = useMemo(() => {
     return Object.values(dataset).map((experiment) => ({
@@ -73,17 +79,21 @@ export function Histogram({ dataset, xAxisOptions }: { dataset: Dataset; xAxisOp
                 return `${bin.binStart.toFixed(2)}-${bin.binEnd.toFixed(2)}`;
               }}
               interval={0}
-              label={{ value: String(xAxis), position: "insideBottom", offset: -5 }}
+              label={{
+                value: String(xAxis),
+                position: 'insideBottom',
+                offset: -5,
+              }}
             />
             <YAxis />
             <Tooltip
               labelFormatter={(label) => {
                 const binStart = Number(label);
                 const bin = histogramData.find((b) => b.binStart === binStart);
-                if (!bin) return "";
+                if (!bin) return '';
                 return `${bin.binStart.toFixed(2)}–${bin.binEnd.toFixed(2)}`;
               }}
-              formatter={(value) => [`${value} counts`, "Frequency"]}
+              formatter={(value) => [`${value} counts`, 'Frequency']}
             />
             <Bar dataKey="count" fill="#82ca9d" />
           </BarChart>
@@ -95,7 +105,7 @@ export function Histogram({ dataset, xAxisOptions }: { dataset: Dataset; xAxisOp
           displayText="Select Histogram Field"
           options={xAxisOptions}
           selectedOption={xAxis}
-          onSelect={(option) => setXAxis(option as InputField | "")}
+          onSelect={(option) => setXAxis(option as InputField | '')}
         />
       </div>
     </div>

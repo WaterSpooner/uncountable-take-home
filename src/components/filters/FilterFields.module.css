@@ -1,16 +1,16 @@
 .container {
-    display: flex; 
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .addFilterButton {
-    padding: 8px 12px;
-    background: var(--color-primary-light);
-    color: white;
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    font-size: 14px;
-    margin-bottom: 8px;
+  padding: 8px 12px;
+  background: var(--color-primary-light);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 8px;
 }
