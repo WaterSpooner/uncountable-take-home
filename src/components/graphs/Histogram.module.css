@@ -1,0 +1,13 @@
+.controlsRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.axisDropdown {
+  width: 100%;
+}
+
+.chartContainer {
+  height: 80vh;
+}

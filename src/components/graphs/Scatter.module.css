@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.controlsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.axisDropdown {
+  max-height: 3em;
+}
+
+.tooltipBox {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.tooltipTitle {
+  font-weight: 600;
+  margin-bottom: 6px;
+}

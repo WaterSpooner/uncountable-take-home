@@ -1,0 +1,9 @@
+.dropdown {
+    padding: var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--bg-tertiary);
+    font-size: var(--font-size);
+    color: var(--color-text);
+    cursor: pointer;
+}
